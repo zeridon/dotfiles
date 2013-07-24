@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Connector
+GenericName=Connector
+NoDisplay=yes
+Comment=Connector helper handler
+Exec=connector.ssh.sh %u
+Icon=utilities-terminal
+Type=Application
+Terminal=true
+MimeType=x-scheme-handler/connector.ssh;
+X-KDE-Protocols=connector.ssh
