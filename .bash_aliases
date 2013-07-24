@@ -1,0 +1,5 @@
+alias ls="ls --color"
+alias ll="ls -l"
+alias ltr="ls -ltr"
+alias l="ls"
+alias addkeys="ssh-add -t `echo 6*3600 | bc` ~/.ssh/home ~/.ssh/id_rsa"
