@@ -1,0 +1,11 @@
+
+[Default Applications]
+x-scheme-handler/connector.ssh=connector.ssh.desktop
+x-scheme-handler/mailto=thunderbird.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/ftp=firefox.desktop
+x-scheme-handler/chrome=firefox.desktop
+
+[Added Associations]
+x-scheme-handler/connector.ssh=connector.ssh.desktop
