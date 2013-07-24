@@ -1,0 +1,28 @@
+[default]
+# Write your default config options here!
+vo=gl:yuv=4,sdl
+dr=1
+ao=sdl
+cache=4096
+cache-min=50
+subcp=cp1251
+framedrop=1
+hardframedrop=1
+stop-xscreensaver=1
+##vm=1
+##screenw=1920
+##screenh=1200
+autosync=5
+msgcolor=1
+
+nojoystick=1
+nolirc=1
+
+alang="bg,bul,en,eng"
+mc=20
+slang="bg,bul,en,eng"
+volstep=1
+#nograbpointer=1
+
+# Q opts
+vf="pp=al,scale"
