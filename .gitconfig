@@ -1,5 +1,8 @@
 [credential]
 	helper = cache
 [user]
-	name = zeridon
+	name = Vladimir Vitkov
 	email = vvitkov@linux-bg.org
+[core]
+	autocrlf = input
+	safecrlf = true
