@@ -3,9 +3,6 @@
 [user]
 	name = Vladimir Vitkov
 	email = vvitkov@linux-bg.org
-[core]
-	autocrlf = input
-	safecrlf = true
 [alias]
 	co = checkout
 	ci = commit
