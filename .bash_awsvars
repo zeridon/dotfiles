@@ -1,0 +1,8 @@
+# AWS speciffic variables
+EC2_HOME=${HOME:-/home/zeridon}/tools/ec2-api-tools-current 		; export EC2_HOME
+EC2_AMITOOL_HOME=${HOME:-/home/zeridon}/tools/ec2-ami-tools-current	; export EC2_AMITOOL_HOME
+
+# check if we have ec2 credentials
+if [ -f ${HOME:-/home/zeridon}/work/passwords/ec2/AWS_credentials ] ; then 
+	. ${HOME:-/home/zeridon}/work/passwords/ec2/AWS_credentials
+fi

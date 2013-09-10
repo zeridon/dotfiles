@@ -86,3 +86,13 @@ fi
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+# Check if we have some java settings
+if [ -f ~/.bash_javavars ] ; then
+	. ~/.bash_javavars
+fi
+
+# Check if we have some AWS config
+if [ -f ~/.bash_awsvars ] ; then
+	. ~/.bash_awsvars
+fi
