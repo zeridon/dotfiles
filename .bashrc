@@ -97,4 +97,8 @@ if [ -f ~/.bash_awsvars ] ; then
 	. ~/.bash_awsvars
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [ -f $HOME/.rvm/bin/rvm ] ; then
+	# so we have rvm lets patch it in the path
+	PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+	. $HOME/.rvm/scripts/rvm
+fi
