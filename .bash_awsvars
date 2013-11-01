@@ -4,14 +4,14 @@
 EC2_HOME=${HOME:-/home/zeridon}/tools/ec2-api-tools-current
 if [ -d ${EC2_HOME} ] ; then
 	export EC2_HOME
-	export PATH=$PATH:$EC2_HOME/bin
+	add_to_path $EC2_HOME/bin
 fi
 
 # EC2 AMI tools
 EC2_AMITOOL_HOME=${HOME:-/home/zeridon}/tools/ec2-ami-tools-current
 if [ -d $EC2_AMITOOL_HOME ] ; then
 	export EC2_AMITOOL_HOME
-	export PATH=$PATH:$EC2_AMITOOL_HOME/bin
+	add_to_path $EC2_AMITOOL_HOME/bin
 fi
 
 # check if we have ec2 credentials

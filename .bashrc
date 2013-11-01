@@ -87,6 +87,14 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+## Some helpfull functions
+add_to_path (){
+	if [[ "$PATH" =~ (^|:)"${1}"(:|$) ]] ; then
+		return 0
+	fi
+	export PATH=${1}:$PATH
+}
+
 # Check if we have some java settings
 if [ -f ~/.bash_javavars ] ; then
 	. ~/.bash_javavars
