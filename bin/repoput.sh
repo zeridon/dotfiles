@@ -2,6 +2,6 @@
 #
 # Simple script wrapping reprepro for local packages
 
-BASEDIR='/mnt/nfs.lan/www/apt.getoto.net'
+BASEDIR='/opt/reprepro'
 
 reprepro -Vb ${BASEDIR} $*
