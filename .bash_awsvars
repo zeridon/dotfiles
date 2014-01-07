@@ -4,17 +4,26 @@
 EC2_HOME=${HOME:-/home/zeridon}/tools/ec2-api-tools-current
 if [ -d ${EC2_HOME} ] ; then
 	export EC2_HOME
-	add_to_path $EC2_HOME/bin
+	add_to_path ${EC2_HOME}/bin
 fi
 
 # EC2 AMI tools
 EC2_AMITOOL_HOME=${HOME:-/home/zeridon}/tools/ec2-ami-tools-current
-if [ -d $EC2_AMITOOL_HOME ] ; then
+if [ -d ${EC2_AMITOOL_HOME} ] ; then
 	export EC2_AMITOOL_HOME
-	add_to_path $EC2_AMITOOL_HOME/bin
+	add_to_path ${EC2_AMITOOL_HOME}/bin
+fi
+
+# AWS CloudSearch tools
+CS_HOME=${HOME:-/home/zeridon}/tools/cloud-search-tools-current
+if [ -d ${CS_HOME} ] ; then
+	export CS_HOME
+	add_to_path ${CS_HOME}/bin
 fi
 
 # check if we have ec2 credentials
 if [ -f ${HOME:-/home/zeridon}/work/passwords/ec2/AWS_credentials ] ; then 
 	. ${HOME:-/home/zeridon}/work/passwords/ec2/AWS_credentials
+	# support credential file required for CloudSearch
+	export AWS_CREDENTIAL_FILE=${HOME:-/home/zeridon}/work/passwords/ec2/AWS_credentials
 fi
