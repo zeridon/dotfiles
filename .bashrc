@@ -95,6 +95,11 @@ add_to_path (){
 	export PATH=${1}:$PATH
 }
 
+## add homedir to path
+if [ -d ${HOME}/bin ] ; then
+	add_to_path ${HOME}/bin
+fi
+
 # Check if we have some java settings
 if [ -f ~/.bash_javavars ] ; then
 	. ~/.bash_javavars
