@@ -1,3 +1,6 @@
 # windowlist at bottom
 hardstatus alwayslastline
 hardstatus string '%{= kG}%-Lw%{= kW}%50> %n%f* %t%{= kG}%+Lw%< %-=%{= WK}%H%{= kG} %c%{-}'
+
+defutf8 on                  # UTF-8 by default
+defscrollback 10000         # large buffer
