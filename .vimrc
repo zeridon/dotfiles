@@ -34,6 +34,7 @@
 "	set number			" number lines
 "	set ruler			" show where we are
 	set showmatch			" show matching brackets
+	set laststatus=2
 	set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%l,%v]
 	"              | | | | |  |   |      |  |     |  |
 	"              | | | | |  |   |      |  |     |  + current column
@@ -47,6 +48,16 @@
 	"              | | +-- readonly flag in square brackets
 	"              | +-- modified flag in square brackets
 	"              +-- full path to file in the buffer
+
+" Cursor
+	set cursorline
+
+" Centralize backups, swapfiles and undo history
+	set backupdir=~/.vim/backups
+	set directory=~/.vim/swaps
+	if exists("&undodir")
+		set undodir=~/.vim/undo
+	endif
 " Colors
 	set t_Co=256
 	colorscheme calmar256-dark
