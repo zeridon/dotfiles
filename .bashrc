@@ -65,15 +65,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
@@ -100,15 +91,10 @@ if [ -d ${HOME}/bin ] ; then
 	add_to_path ${HOME}/bin
 fi
 
-# Check if we have some java settings
-if [ -f ~/.bash_javavars ] ; then
-	. ~/.bash_javavars
-fi
-
-# Check if we have some AWS config
-if [ -f ~/.bash_awsvars ] ; then
-	. ~/.bash_awsvars
-fi
+# Check for speciffic config/var settings/aliases and use them
+for file in ~/.bash_aliases ~/.bash_javavars ~/.bash_awsvars ; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
 
 if [ -f $HOME/.rvm/bin/rvm ] ; then
 	# so we have rvm lets patch it in the path
