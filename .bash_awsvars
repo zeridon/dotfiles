@@ -27,3 +27,9 @@ if [ -f ${HOME:-/home/zeridon}/work/passwords/ec2/AWS_credentials ] ; then
 	# support credential file required for CloudSearch
 	export AWS_CREDENTIAL_FILE=${HOME:-/home/zeridon}/work/passwords/ec2/AWS_credentials
 fi
+
+# support unified python cli
+export AWS_CONFIG_FILE=${HOME:-/home/zeridon}/work/passwords/ec2/awscli
+
+# enable bash completion
+complete -C ${HOME:-/home/zeridon}/tools/awscli/bin/aws_completer aws
