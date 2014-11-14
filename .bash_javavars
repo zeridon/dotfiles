@@ -4,3 +4,48 @@ if [ -d ${JAVA_HOME} ] ; then
 	export JAVA_HOME
 	add_to_path ${JAVA_HOME}/bin
 fi
+
+switch_maven(){
+	# $1 version of maven to switch to
+	if [ -x /usr/local/apache-maven/apache-maven-${1}/bin/mvn ] ; then
+		for dir in `ls -1d /usr/local/apache-maven/apache-maven-*` ; do
+			if [ -d ${dir}/bin ] ; then
+				remove_from_path ${dir}/bin
+			fi
+		done
+			
+		export M2_HOME=/usr/local/apache-maven/apache-maven-${1}
+		export M2=$M2_HOME/bin
+		add_to_path $M2
+	else
+		echo "Invalid maven version: ${1}"
+		echo "Valid Versions:"
+		for dir in `ls -1d /usr/local/apache-maven/apache-maven-*` ; do
+			if [ -x ${dir}/bin/mvn ] ; then
+				echo -e "\t\t\t${dir##*-}"
+			fi
+		done
+	fi
+}
+
+switch_java(){
+	# $1 version of jdk to switch to
+	if [ -x /usr/local/java/jdk${1}/bin/java ] ; then
+		for dir in `ls -1d /usr/local/java/jdk*` ; do
+			if [ -d ${dir}/bin ] ; then
+				remove_from_path ${dir}/bin
+			fi
+		done
+			
+		export JAVA_HOME=/usr/local/java/jdk${1}
+		add_to_path $JAVA_HOME/bin
+	else
+		echo "Invalid java version: ${1}"
+		echo "Valid Versions:"
+		for dir in `ls -1d /usr/local/java/jdk*` ; do
+			if [ -x ${dir}/bin/java ] ; then
+				echo -e "\t\t\t${dir##*jdk}"
+			fi
+		done
+	fi
+}
