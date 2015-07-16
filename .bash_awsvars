@@ -35,3 +35,10 @@ if [ -f ${AWS_CONFIG_FILE} ] ; then
 	# enable bash completion
 	complete -C ${HOME:-/home/zeridon}/tools/awscli/bin/aws_completer aws
 fi
+
+# Cloudwatch tools
+AWS_CLOUDWATCH_HOME=${HOME:-/home/zeridon}/tools/cloudwatch-tools-current
+if [ -d ${AWS_CLOUDWATCH_HOME} ] ; then
+	export AWS_CLOUDWATCH_HOME
+	add_to_path ${AWS_CLOUDWATCH_HOME}/bin
+fi
