@@ -62,3 +62,5 @@
 	set t_Co=256
 	colorscheme calmar256-dark
 
+" some customs
+	autocmd BufNewFile,BufReadPost *.md set filetype=markdown
