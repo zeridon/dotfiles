@@ -1,0 +1,1 @@
+../repos/vim-ansible-yaml/syntax/ansible.vim

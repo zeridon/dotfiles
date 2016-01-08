@@ -85,7 +85,9 @@ add_to_path (){
 	fi
 	export PATH=${1}:$PATH
 }
-
+remove_from_path(){
+	export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`;
+}
 ## add homedir to path
 if [ -d ${HOME}/bin ] ; then
 	add_to_path ${HOME}/bin
@@ -96,8 +98,9 @@ for file in ~/.bash_aliases ~/.bash_javavars ~/.bash_awsvars ; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
-if [ -f $HOME/.rvm/bin/rvm ] ; then
+# Rubbies management (rbenv)
+if [ -f $HOME/.rbenv/bin/rbenv ] ; then
 	# so we have rvm lets patch it in the path
-	PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-	. $HOME/.rvm/scripts/rvm
+	add_to_path $HOME/.rbenv/bin # Add RVM to PATH for scripting
+	eval "$(rbenv init -)"
 fi
