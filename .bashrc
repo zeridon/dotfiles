@@ -104,3 +104,21 @@ if [ -f $HOME/.rbenv/bin/rbenv ] ; then
 	add_to_path $HOME/.rbenv/bin # Add RVM to PATH for scripting
 	eval "$(rbenv init -)"
 fi
+
+# Rubbies management (rvm)
+if [ -f $HOME/.rvm/scripts/rvm ] ; then
+	# add bin to path
+	add_to_path $HOME/.rvm/bin
+	# and source the rvm
+	source $HOME/.rvm/scripts/rvm
+fi
+
+# Deb build related vars
+if [ -f $HOME/.bash_debvars ] ; then
+	source $HOME/.bash_debvars
+fi
+
+# perl related stuff
+if [ -f $HOME/.bash_perlvars ] ; then
+	source $HOME/.bash_perlvars
+fi
