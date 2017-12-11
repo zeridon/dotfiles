@@ -1,9 +1,9 @@
 # Java related variables
-JAVA_HOME=/usr/lib/jvm/j2sdk1.7-oracle
-if [ -d ${JAVA_HOME} ] ; then
-	export JAVA_HOME
-	add_to_path ${JAVA_HOME}/bin
-fi
+#JAVA_HOME=/usr/lib/jvm/j2sdk1.7-oracle
+#if [ -d ${JAVA_HOME} ] ; then
+#	export JAVA_HOME
+#	add_to_path ${JAVA_HOME}/bin
+#fi
 
 MAVEN_HOME=${HOME:-/home/zeridon}/tools
 
@@ -49,3 +49,5 @@ switch_java(){
 		done
 	fi
 }
+
+switch_java oracle-java8-jdk-amd64
