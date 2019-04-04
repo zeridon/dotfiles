@@ -5,6 +5,7 @@
 	syntax on		" syntax highlighting on
 	set autoindent		" autoindent
 	set modeline            " modeline interpret
+	set modelines=5
 
 " General stuff
 	filetype plugin indent on	" load filetype plugins/indent settings
@@ -67,3 +68,5 @@
 
 	let g:terraform_align=1
 	autocmd FileType terraform setlocal commentstring=#%s
+
+	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

@@ -49,5 +49,3 @@ switch_java(){
 		done
 	fi
 }
-
-switch_java oracle-java8-jdk-amd64
