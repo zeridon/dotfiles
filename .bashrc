@@ -94,7 +94,7 @@ if [ -d ${HOME}/bin ] ; then
 fi
 
 # Check for speciffic config/var settings/aliases and use them
-for file in ~/.bash_aliases ~/.bash_javavars ~/.bash_awsvars ~/.bash_debvars ~/.bash_perlvars ~/.bash_govars ~/.bash_nodevars ; do
+for file in ~/.bash_aliases ~/.bash_javavars ~/.bash_awsvars ~/.bash_debvars ~/.bash_perlvars ~/.bash_govars ~/.bash_nodevars ~/.bash_herokuvars; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
