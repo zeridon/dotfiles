@@ -3,6 +3,7 @@
 #set -x
 #
 # Example for triggerhappy
+# https://github.com/wertarbyte/triggerhappy/issues/27
 # KEY_KPPLUS+KEY_LEFTMETA  1 /home/zeridon/tmp/brightness.sh -u 5
 # KEY_KPMINUS+KEY_LEFTMETA 1 /home/zeridon/tmp/brightness.sh -d 5
 
