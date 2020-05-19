@@ -114,3 +114,5 @@ if [ -f $HOME/.bash-git-prompt/gitprompt.sh ] ; then
 	fi
 	source ~/.bash-git-prompt/gitprompt.sh
 fi
+
+eval "$(direnv hook bash)"
