@@ -54,8 +54,12 @@
 	set cursorline
 
 " Centralize backups, swapfiles and undo history
-	set backupdir=~/.vim/backups
-	set directory=~/.vim/swaps
+	if exists("&backupdir")
+		set backupdir=~/.vim/backups
+	endif
+	if exists("&directory")
+		set directory=~/.vim/swaps
+	endif
 	if exists("&undodir")
 		set undodir=~/.vim/undo
 	endif
@@ -70,3 +74,6 @@
 	autocmd FileType terraform setlocal commentstring=#%s
 
 	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
