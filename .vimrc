@@ -53,16 +53,25 @@
 " Cursor
 	set cursorline
 
-" Centralize backups, swapfiles and undo history
-	if exists("&backupdir")
-		set backupdir=~/.vim/backups
-	endif
-	if exists("&directory")
-		set directory=~/.vim/swaps
-	endif
-	if exists("&undodir")
-		set undodir=~/.vim/undo
-	endif
+" Make Vim able to edit crontab files again.
+set backupskip=/tmp/*,/private/tmp/*
+set backup                        " enable backups
+set noswapfile                    " it's 2015, Vim.
+set undodir=~/.vim/undo/     " undo files
+set backupdir=~/.vim/backup/ " backups
+set directory=~/.vim/swap/   " swap files
+
+" Make those folders automatically if they don't already exist.
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+
 " Colors
 	set t_Co=256
 	colorscheme calmar256-dark
