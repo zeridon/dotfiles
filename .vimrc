@@ -57,9 +57,9 @@
 set backupskip=/tmp/*,/private/tmp/*
 set backup                        " enable backups
 set noswapfile                    " it's 2015, Vim.
-set undodir=~/.vim/undo/     " undo files
-set backupdir=~/.vim/backup/ " backups
-set directory=~/.vim/swap/   " swap files
+set undodir=$HOME/.vim/undo/      " undo files
+set backupdir=$HOME/.vim/backups/ " backups
+set directory=$HOME/.vim/swaps/   " swap files
 
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
