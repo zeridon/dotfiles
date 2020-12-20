@@ -1,3 +1,8 @@
 # Package building vars
+<<<<<<< HEAD
 export DEBFULLNAME="Vladimir Vitkov (Packaging Key)"
 export DEBEMAIL="vvitkov@sdl.com"
+=======
+export DEBFULLNAME="Netsecad Packaging"
+export DEBEMAIL="packages@netsecad.com"
+>>>>>>> 3b38ce153d33872ca518fb292e0865ea7c5c39ec

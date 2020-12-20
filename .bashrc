@@ -94,7 +94,11 @@ if [ -d ${HOME}/bin ] ; then
 fi
 
 # Check for speciffic config/var settings/aliases and use them
+<<<<<<< HEAD
 for file in ~/.bash_aliases ~/.bash_javavars ~/.bash_awsvars ~/.bash_debvars ~/.bash_perlvars ~/.bash_govars ; do
+=======
+for file in ~/.bash_aliases ~/.bash_javavars ~/.bash_awsvars ~/.bash_debvars ~/.bash_perlvars ~/.bash_govars ~/.bash_nodevars ~/.bash_herokuvars; do
+>>>>>>> 3b38ce153d33872ca518fb292e0865ea7c5c39ec
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
@@ -104,3 +108,18 @@ if [ -f $HOME/.rbenv/bin/rbenv ] ; then
 	add_to_path $HOME/.rbenv/bin # Add RVM to PATH for scripting
 	eval "$(rbenv init -)"
 fi
+<<<<<<< HEAD
+=======
+
+if [ -f $HOME/.bash-git-prompt/gitprompt.sh ] ; then
+	GIT_PROMPT_ONLY_IN_REPO=1
+	GIT_PROMPT_SHOW_UPSTREAM=1
+	GIT_PROMPT_THEME=Single_line_Dark
+	if [ -f $HOME/.git-prompt-colors.sh ] ; then
+		GIT_PROMPT_THEME=Custom
+	fi
+	source ~/.bash-git-prompt/gitprompt.sh
+fi
+
+eval "$(direnv hook bash)"
+>>>>>>> 3b38ce153d33872ca518fb292e0865ea7c5c39ec

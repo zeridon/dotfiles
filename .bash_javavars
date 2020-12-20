@@ -49,5 +49,8 @@ switch_java(){
 		done
 	fi
 }
+<<<<<<< HEAD
 
 switch_java oracle-java8-jdk-amd64
+=======
+>>>>>>> 3b38ce153d33872ca518fb292e0865ea7c5c39ec

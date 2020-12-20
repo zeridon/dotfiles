@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# deprecated
 git pull
 function doIt() {
 	rsync --exclude ".git/" \

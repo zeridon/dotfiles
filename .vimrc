@@ -5,6 +5,7 @@
 	syntax on		" syntax highlighting on
 	set autoindent		" autoindent
 	set modeline            " modeline interpret
+	set modelines=5
 
 " General stuff
 	filetype plugin indent on	" load filetype plugins/indent settings
@@ -52,12 +53,25 @@
 " Cursor
 	set cursorline
 
-" Centralize backups, swapfiles and undo history
-	set backupdir=~/.vim/backups
-	set directory=~/.vim/swaps
-	if exists("&undodir")
-		set undodir=~/.vim/undo
-	endif
+" Make Vim able to edit crontab files again.
+set backupskip=/tmp/*,/private/tmp/*
+set backup                        " enable backups
+set noswapfile                    " it's 2015, Vim.
+set undodir=$HOME/.vim/undo/      " undo files
+set backupdir=$HOME/.vim/backups/ " backups
+set directory=$HOME/.vim/swaps/   " swap files
+
+" Make those folders automatically if they don't already exist.
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+
 " Colors
 	set t_Co=256
 	colorscheme calmar256-dark
@@ -67,3 +81,17 @@
 
 	let g:terraform_align=1
 	autocmd FileType terraform setlocal commentstring=#%s
+	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
+
+" Make sure Vim returns to the same line when you reopen a file.
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
