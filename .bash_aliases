@@ -8,13 +8,8 @@ alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 #alias pdebuild="sudo DIST=trusty pdebuild --architecture amd64 --configfile ~/.pbuilderrc --pbuilderroot sudo"
 alias pycreate='virtualenv --no-site-packages .venv'
 alias pyactivate='. ./.venv/bin/activate'
-<<<<<<< HEAD
-alias pyserve='python -m SimpleHTTPServer 8080'
-alias ipcalc='ipcalc -n'
-=======
 alias pyserve='python3 -m http.server 8080 || python2 -m SimpleHTTPServer 8080'
 alias ipcalc='ipcalc -n'
 alias wttr-s='curl https://wttr.in/?m0pqF'
 alias wttr='curl https://wttr.in/?m1pqF'
 alias wttr-f='curl https://wttr.in/?mpqF'
->>>>>>> 3b38ce153d33872ca518fb292e0865ea7c5c39ec
