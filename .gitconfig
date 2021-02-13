@@ -2,7 +2,7 @@
 	helper = cache
 [user]
 	name = Vladimir Vitkov
-	email = vvitkov@linux-bg.org
+	email = vvitkov@gmail.com
 [alias]
 	co = checkout
 	ci = commit
@@ -11,3 +11,6 @@
 	default = simple
 [core]
 	autocrlf = input
+	pafs = push --all --force stash --verbose
+[svn]
+	rmdir = true
