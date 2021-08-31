@@ -7,10 +7,14 @@
 	co = checkout
 	ci = commit
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	synctags = !git fetch origin && git fetch upstream && git push --tags origin
+	pafs = push --all --force stash --verbose
 [push]
 	default = simple
 [core]
 	autocrlf = input
-	pafs = push --all --force stash --verbose
 [svn]
 	rmdir = true
+[fetch]
+	prune = true
+	pruneTags = true
