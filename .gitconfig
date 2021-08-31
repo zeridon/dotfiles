@@ -7,7 +7,7 @@
 	co = checkout
 	ci = commit
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	synctags = !git fetch origin && git fetch upstream && git push --tags origin
+	synctags = "!if git ls-remote --heads --exit-code --quiet upstream > /dev/null 2>&1 ; then  git fetch origin && git fetch upstream && git push --tags origin ; fi"
 [push]
 	default = simple
 [core]
