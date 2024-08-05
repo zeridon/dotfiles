@@ -94,7 +94,7 @@ if [ -d ${HOME}/bin ] ; then
 fi
 
 # Check for speciffic config/var settings/aliases and use them
-for file in ~/.bash_aliases ~/.bash_javavars ~/.bash_awsvars ~/.bash_debvars ~/.bash_perlvars ~/.bash_govars ~/.bash_nodevars ~/.bash_herokuvars; do
+for file in ~/.bash_aliases ~/.bash_javavars ~/.bash_awsvars ~/.bash_debvars ~/.bash_perlvars ~/.bash_govars ~/.bash_nodevars ~/.bash_herokuvars ~/.bash_disable-emojis-and-colors; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 
@@ -116,3 +116,14 @@ if [ -f $HOME/.bash-git-prompt/gitprompt.sh ] ; then
 fi
 
 eval "$(direnv hook bash)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# pipenv specials
+if [ -d $HOME/.local/bin ] ; then
+	add_to_path $HOME/.local/bin
+fi
+
+# pipenv local to project
+export PIPENV_VENV_IN_PROJECT=1
